@@ -302,15 +302,19 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", uptime: process.uptime() });
 });
 
+// Fixed error handling middleware
 app.use((err, req, res, next) => {
   if (err && err.message === "Origin not allowed by CORS") {
     res.status(403).json({ message: err.message });
     return;
   }
+  // Handle other errors
+  console.error(err);
+  res.status(500).json({ message: "Internal server error" });
   next(err);
 });
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`API running on port ${PORT}`);
   console.log("CI/CD working from ubuntu");
-});
+y
