@@ -312,4 +312,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`API running on port ${PORT}`);
+  console.log("CI/CD working from ubuntu");
 });
