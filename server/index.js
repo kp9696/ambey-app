@@ -166,11 +166,11 @@ const defaultImage =
 
 const productImageByName = {
   // Existing Amazon images (keep)
-  "Godrej Compressor": "https://m.media-amazon.com/images/I/61kKxQ4f9PL._SL1500_.jpg",
-  "LG PCB Board": "https://m.media-amazon.com/images/I/71G7p9YqZ-L._SL1500_.jpg",
-  "Whirlpool Thermostat": "https://m.media-amazon.com/images/I/61tR1Jz8n3L._SL1500_.jpg",
-  "AC Capacitor 35+5 MFD": "https://m.media-amazon.com/images/I/61A1FvQX5XL._SL1500_.jpg",
-  "Copper Filter Drier": "https://m.media-amazon.com/images/I/51i4XbZ9JjL._SL1200_.jpg",
+  "Godrej Compressor": "https://5.imimg.com/data5/SELLER/Default/2023/2/HI/RQ/SZ/27191124/godrej-fridge-compressor-1675334357777-500x500.jpg",
+  "LG PCB Board": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQbPu3FWPXNKf7-gad1gijg5-nUMya1choA-3nIevo1u80dBfg_fa4uTVm-qxUYaYAemqPC3TokB7eYMCI_DJ7O1E_p_9g2WUegNE4f-r61pdTt4pJwpFGwFw",
+  "Whirlpool Thermostat": "https://m.media-amazon.com/images/I/41gAPp1qvgL.jpg",
+  "AC Capacitor 35+5 MFD": "https://m.media-amazon.com/images/I/61ov1+DyjXL.jpg",
+  "Copper Filter Drier": "http://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70",
   "R134a Refrigerant Gas (450g)": "https://m.media-amazon.com/images/I/51rTgS4J6JL._SL1000_.jpg",
   "Split AC Fan Motor": "https://m.media-amazon.com/images/I/61v3G7k6A8L._SL1500_.jpg",
   "Universal AC Remote": "https://m.media-amazon.com/images/I/61yFqN4f5DL._SL1500_.jpg",
