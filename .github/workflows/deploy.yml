@@ -22,7 +22,7 @@ jobs:
 
             cd server
             npm install
-            pm2 reload ambey-backend
+            pm2 restart ambey-backend
 
             cd ../client
             npm install
