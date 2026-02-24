@@ -33,54 +33,342 @@ app.use(rateLimit({
 }));
 
 const baseProducts = [
-  { id: 1, name: "Godrej Compressor", company: "Godrej", category: "Compressor" },
-  { id: 2, name: "LG PCB Board", company: "LG", category: "Electrical" },
-  { id: 3, name: "Whirlpool Thermostat", company: "Whirlpool", category: "Sensors" },
-  { id: 4, name: "AC Capacitor 35+5 MFD", company: "LG", category: "Electrical" },
-  { id: 5, name: "Copper Filter Drier", company: "Godrej", category: "Compressor" },
-  { id: 6, name: "R134a Refrigerant Gas (450g)", company: "LG", category: "Gas" },
-  { id: 7, name: "Split AC Fan Motor", company: "LG", category: "Electrical" },
-  { id: 8, name: "Indoor AC Blower Wheel", company: "Whirlpool", category: "Electrical" },
-  { id: 9, name: "Refrigerator Door Gasket", company: "Godrej", category: "Compressor" },
-  { id: 10, name: "Defrost Timer", company: "Whirlpool", category: "Electrical" },
-  { id: 11, name: "Universal AC Remote", company: "Universal", category: "Electrical" },
-  { id: 12, name: "Copper Expansion Valve", company: "Godrej", category: "Compressor" },
-  { id: 13, name: "Temperature Sensor (NTC)", company: "LG", category: "Sensors" },
-  { id: 14, name: "Contactor 2 Pole", company: "Godrej", category: "Electrical" },
-  { id: 15, name: "Compressor Overload Protector", company: "Godrej", category: "Compressor" },
-  { id: 16, name: "AC Contact Relay", company: "LG", category: "Electrical" },
-  { id: 17, name: "Dual Run Capacitor 45+5 MFD", company: "Whirlpool", category: "Electrical" },
-  { id: 18, name: "R32 Refrigerant Gas Cylinder", company: "LG", category: "Gas" },
-  { id: 19, name: "Compressor Mounting Kit", company: "Godrej", category: "Compressor" },
-  { id: 20, name: "AC Room Temperature Sensor", company: "LG", category: "Sensors" },
-  { id: 21, name: "Copper Coil Tube 1/4 inch", company: "Godrej", category: "Compressor" },
-  { id: 22, name: "Service Valve Core", company: "Whirlpool", category: "Compressor" },
-  { id: 23, name: "Inverter AC PCB Module", company: "LG", category: "Electrical" },
-  { id: 24, name: "Pressure Sensor Switch", company: "Whirlpool", category: "Sensors" },
-  { id: 25, name: "LG Refrigerator Water Filter Cartridge", company: "LG", category: "Compressor" },
-  { id: 26, name: "LG Ice Maker Assembly", company: "LG", category: "Electrical" },
-  { id: 27, name: "LG Defrost Heater", company: "LG", category: "Electrical" },
-  { id: 28, name: "LG Evaporator Fan Motor", company: "LG", category: "Electrical" },
-  { id: 29, name: "LG Door Switch", company: "LG", category: "Sensors" },
-  { id: 30, name: "LG Temperature Control Thermistor", company: "LG", category: "Sensors" },
-  { id: 31, name: "LG Inlet Water Valve", company: "LG", category: "Compressor" },
-  { id: 32, name: "LG Refrigerator Shelf Rack", company: "LG", category: "Electrical" },
-  { id: 33, name: "LG Vegetable Tray", company: "LG", category: "Electrical" },
-  { id: 34, name: "LG Refrigerator Door Bin", company: "LG", category: "Electrical" },
-  { id: 35, name: "LG Start Relay", company: "LG", category: "Electrical" },
-  { id: 36, name: "LG Overload Protector", company: "LG", category: "Compressor" },
-  { id: 37, name: "Whirlpool Refrigerator Water Filter", company: "Whirlpool", category: "Compressor" },
-  { id: 38, name: "Whirlpool Ice Maker Kit", company: "Whirlpool", category: "Electrical" },
-  { id: 39, name: "Whirlpool Defrost Heater Assembly", company: "Whirlpool", category: "Electrical" },
-  { id: 40, name: "Whirlpool Evaporator Fan Motor", company: "Whirlpool", category: "Electrical" },
-  { id: 41, name: "Whirlpool Door Gasket Set", company: "Whirlpool", category: "Compressor" },
-  { id: 42, name: "Whirlpool Door Shelf Bin", company: "Whirlpool", category: "Electrical" },
-  { id: 43, name: "Whirlpool Crisper Drawer", company: "Whirlpool", category: "Electrical" },
-  { id: 44, name: "Whirlpool Thermistor Sensor", company: "Whirlpool", category: "Sensors" },
-  { id: 45, name: "Whirlpool Air Damper Control", company: "Whirlpool", category: "Sensors" },
-  { id: 46, name: "Whirlpool Start Device Relay", company: "Whirlpool", category: "Electrical" },
-  { id: 47, name: "Whirlpool Compressor Run Capacitor", company: "Whirlpool", category: "Electrical" },
-  { id: 48, name: "Whirlpool Condenser Fan Blade", company: "Whirlpool", category: "Compressor" },
+  {
+    id: 1,
+    name: "Godrej Compressor",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/2/HI/RQ/SZ/27191124/godrej-fridge-compressor-1675334357777-500x500.jpg"
+  },
+  {
+    id: 2,
+    name: "LG PCB Board",
+    company: "LG",
+    category: "Electrical",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQbPu3FWPXNKf7-gad1gijg5-nUMya1choA-3nIevo1u80dBfg_fa4uTVm-qxUYaYAemqPC3TokB7eYMCI_DJ7O1E_p_9g2WUegNE4f-r61pdTt4pJwpFGwFw"
+  },
+  {
+    id: 3,
+    name: "Whirlpool Thermostat",
+    company: "Whirlpool",
+    category: "Sensors",
+    image: "https://m.media-amazon.com/images/I/41gAPp1qvgL.jpg"
+  },
+  {
+    id: 4,
+    name: "AC Capacitor 35+5 MFD",
+    company: "LG",
+    category: "Electrical",
+    image: "https://m.media-amazon.com/images/I/61ov1+DyjXL.jpg"
+  },
+  {
+    id: 5,
+    name: "Copper Filter Drier",
+    company: "Godrej",
+    category: "Compressor",
+    image: "http://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70"
+  },
+  {
+    id: 6,
+    name: "R134a Refrigerant Gas (450g)",
+    company: "LG",
+    category: "Gas",
+    image: "https://m.media-amazon.com/images/I/51rTgS4J6JL._SL1000_.jpg"
+  },
+  {
+    id: 7,
+    name: "Split AC Fan Motor",
+    company: "LG",
+    category: "Electrical",
+    image: "https://m.media-amazon.com/images/I/61v3G7k6A8L._SL1500_.jpg"
+  },
+  {
+    id: 8,
+    name: "Indoor AC Blower Wheel",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1581092160625-01e7d7a2b6f0?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 9,
+    name: "Refrigerator Door Gasket",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1582582621959-48d27397dc07?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 10,
+    name: "Defrost Timer",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://m.media-amazon.com/images/I/61x9FvN6LxL._SL1500_.jpg"
+  },
+  {
+    id: 11,
+    name: "Universal AC Remote",
+    company: "Universal",
+    category: "Electrical",
+    image: "https://m.media-amazon.com/images/I/61yFqN4f5DL._SL1500_.jpg"
+  },
+  {
+    id: 12,
+    name: "Copper Expansion Valve",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://m.media-amazon.com/images/I/61n3Kz4XhQL._SL1200_.jpg"
+  },
+  {
+    id: 13,
+    name: "Temperature Sensor (NTC)",
+    company: "LG",
+    category: "Sensors",
+    image: "https://m.media-amazon.com/images/I/51p8KkQ6p2L._SL1000_.jpg"
+  },
+  {
+    id: 14,
+    name: "Contactor 2 Pole",
+    company: "Godrej",
+    category: "Electrical",
+    image: "https://m.media-amazon.com/images/I/71Lw6YxkR-L._SL1500_.jpg"
+  },
+  {
+    id: 15,
+    name: "Compressor Overload Protector",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 16,
+    name: "AC Contact Relay",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 17,
+    name: "Dual Run Capacitor 45+5 MFD",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1589792923962-537704632910?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 18,
+    name: "R32 Refrigerant Gas Cylinder",
+    company: "LG",
+    category: "Gas",
+    image: "https://images.unsplash.com/photo-1616085112161-e2f1c90a3e2f?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 19,
+    name: "Compressor Mounting Kit",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 20,
+    name: "AC Room Temperature Sensor",
+    company: "LG",
+    category: "Sensors",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 21,
+    name: "Copper Coil Tube 1/4 inch",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 22,
+    name: "Service Valve Core",
+    company: "Whirlpool",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 23,
+    name: "Inverter AC PCB Module",
+    company: "LG",
+    category: "Electrical",
+    image: "https://m.media-amazon.com/images/I/61Yqf7g6HjL._SL1500_.jpg"
+  },
+  {
+    id: 24,
+    name: "Pressure Sensor Switch",
+    company: "Whirlpool",
+    category: "Sensors",
+    image: "https://m.media-amazon.com/images/I/51y9x9v8XQL._SL1000_.jpg"
+  },
+  {
+    id: 25,
+    name: "LG Refrigerator Water Filter Cartridge",
+    company: "LG",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1582719478185-2f9c3b6f9a33?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 26,
+    name: "LG Ice Maker Assembly",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1580910419894-3f3bca9b81d6?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 27,
+    name: "LG Defrost Heater",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbb16d5?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 28,
+    name: "LG Evaporator Fan Motor",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 29,
+    name: "LG Door Switch",
+    company: "LG",
+    category: "Sensors",
+    image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 30,
+    name: "LG Temperature Control Thermistor",
+    company: "LG",
+    category: "Sensors",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 31,
+    name: "LG Inlet Water Valve",
+    company: "LG",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1584270354949-1f285e3fda5b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 32,
+    name: "LG Refrigerator Shelf Rack",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1600566753151-384129cf4e3f?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 33,
+    name: "LG Vegetable Tray",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 34,
+    name: "LG Refrigerator Door Bin",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1556912167-f556f1f39faa?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 35,
+    name: "LG Start Relay",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 36,
+    name: "LG Overload Protector",
+    company: "LG",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 37,
+    name: "Whirlpool Refrigerator Water Filter",
+    company: "Whirlpool",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 38,
+    name: "Whirlpool Ice Maker Kit",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 39,
+    name: "Whirlpool Defrost Heater Assembly",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267d1?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 40,
+    name: "Whirlpool Evaporator Fan Motor",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 41,
+    name: "Whirlpool Door Gasket Set",
+    company: "Whirlpool",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1582582621950-5d3a6f2b65ff?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 42,
+    name: "Whirlpool Door Shelf Bin",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 43,
+    name: "Whirlpool Crisper Drawer",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1586201375766-83865001e31d?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 44,
+    name: "Whirlpool Thermistor Sensor",
+    company: "Whirlpool",
+    category: "Sensors",
+    image: "https://images.unsplash.com/photo-1581092160618-2b9b08d4d2da?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 45,
+    name: "Whirlpool Air Damper Control",
+    company: "Whirlpool",
+    category: "Sensors",
+    image: "https://images.unsplash.com/photo-1581092160620-7a0a8b7c0d9f?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 46,
+    name: "Whirlpool Start Device Relay",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1581092160622-4c2f4f1a2e6b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 47,
+    name: "Whirlpool Compressor Run Capacitor",
+    company: "Whirlpool",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1581092160627-3d5b1d4c7a0f?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    id: 48,
+    name: "Whirlpool Condenser Fan Blade",
+    company: "Whirlpool",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1581092160630-3a7a4b0f61e2?auto=format&fit=crop&w=900&q=80"
+  },
   {
     id: 49,
     name: "Spareplanet™ Bimetal Spare Parts for Refrigerator Temperature Compatible with Godrej",
