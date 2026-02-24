@@ -45,7 +45,7 @@ const baseProducts = [
     name: "LG PCB Board",
     company: "LG",
     category: "Electrical",
-    image: "https://m.media-amazon.com/images/I/41gAPp1qvgL.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"
   },
   {
     id: 3,
