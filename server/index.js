@@ -66,7 +66,7 @@ const baseProducts = [
     name: "Copper Filter Drier",
     company: "Godrej",
     category: "Compressor",
-    image: "https://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70"
+    image: "http://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70"
   },
   {
     id: 6,
@@ -382,7 +382,7 @@ const baseProducts = [
     name: "Godrej Refrigerator Defrost Thermostat",
     company: "Godrej",
     category: "Sensors",
-    image: "https://m.media-amazon.com/images/I/317r4HltaoL._SX522_.jpg"
+    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 51,
@@ -445,79 +445,18 @@ const baseProducts = [
     name: "Universal Refrigerator Temperature Controller",
     company: "Universal",
     category: "Sensors",
-    image: "https://m.media-amazon.com/images/I/711ksbkW3JL.jpg"
+    image: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=900&q=80"
   },
 ];
 
 const defaultImage =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/No_image_available.svg/600px-No_image_available.svg.png";
 
-// Normalize an image URL: trim whitespace, upgrade http:// to https://,
-// and fall back to defaultImage for non-string or empty values.
-function normalizeImageUrl(url) {
-  if (typeof url !== "string" || !url.trim()) return defaultImage;
-  const trimmed = url.trim();
-  return trimmed.startsWith("http://") ? trimmed.replace("http://", "https://") : trimmed;
-}
-
-const productImageByName = {
-  // Existing Amazon images (keep)
-  "Godrej Compressor": "https://5.imimg.com/data5/SELLER/Default/2023/2/HI/RQ/SZ/27191124/godrej-fridge-compressor-1675334357777-500x500.jpg",
-  "LG PCB Board": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQbPu3FWPXNKf7-gad1gijg5-nUMya1choA-3nIevo1u80dBfg_fa4uTVm-qxUYaYAemqPC3TokB7eYMCI_DJ7O1E_p_9g2WUegNE4f-r61pdTt4pJwpFGwFw",
-  "Whirlpool Thermostat": "https://m.media-amazon.com/images/I/41gAPp1qvgL.jpg",
-  "AC Capacitor 35+5 MFD": "https://m.media-amazon.com/images/I/61ov1+DyjXL.jpg",
-  "Copper Filter Drier": "https://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70",
-  "R134a Refrigerant Gas (450g)": "https://m.media-amazon.com/images/I/51rTgS4J6JL._SL1000_.jpg",
-  "Split AC Fan Motor": "https://m.media-amazon.com/images/I/61v3G7k6A8L._SL1500_.jpg",
-  "Universal AC Remote": "https://m.media-amazon.com/images/I/61yFqN4f5DL._SL1500_.jpg",
-  "Copper Expansion Valve": "https://m.media-amazon.com/images/I/61n3Kz4XhQL._SL1200_.jpg",
-  "Temperature Sensor (NTC)": "https://m.media-amazon.com/images/I/51p8KkQ6p2L._SL1000_.jpg",
-  "Contactor 2 Pole": "https://m.media-amazon.com/images/I/71Lw6YxkR-L._SL1500_.jpg",
-  "Defrost Timer": "https://m.media-amazon.com/images/I/61x9FvN6LxL._SL1500_.jpg",
-  "Inverter AC PCB Module": "https://m.media-amazon.com/images/I/61Yqf7g6HjL._SL1500_.jpg",
-  "Pressure Sensor Switch": "https://m.media-amazon.com/images/I/51y9x9v8XQL._SL1000_.jpg",
-
-  // Unique online images for the remaining products (Unsplash)
-  "Indoor AC Blower Wheel": "https://images.unsplash.com/photo-1581092160625-01e7d7a2b6f0?auto=format&fit=crop&w=900&q=80",
-  "Refrigerator Door Gasket": "https://images.unsplash.com/photo-1582582621959-48d27397dc07?auto=format&fit=crop&w=900&q=80",
-  "Compressor Overload Protector": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-  "AC Contact Relay": "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=80",
-  "Dual Run Capacitor 45+5 MFD": "https://images.unsplash.com/photo-1589792923962-537704632910?auto=format&fit=crop&w=900&q=80",
-  "R32 Refrigerant Gas Cylinder": "https://images.unsplash.com/photo-1616085112161-e2f1c90a3e2f?auto=format&fit=crop&w=900&q=80",
-  "Compressor Mounting Kit": "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=900&q=80",
-  "AC Room Temperature Sensor": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80",
-  "Copper Coil Tube 1/4 inch": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80",
-  "Service Valve Core": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
-  "LG Refrigerator Water Filter Cartridge": "https://images.unsplash.com/photo-1582719478185-2f9c3b6f9a33?auto=format&fit=crop&w=900&q=80",
-  "LG Ice Maker Assembly": "https://images.unsplash.com/photo-1580910419894-3f3bca9b81d6?auto=format&fit=crop&w=900&q=80",
-  "LG Defrost Heater": "https://images.unsplash.com/photo-1601049541289-9b1b7bbb16d5?auto=format&fit=crop&w=900&q=80",
-  "LG Evaporator Fan Motor": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
-  "LG Door Switch": "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80",
-  "LG Temperature Control Thermistor": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80",
-  "LG Inlet Water Valve": "https://images.unsplash.com/photo-1584270354949-1f285e3fda5b?auto=format&fit=crop&w=900&q=80",
-  "LG Refrigerator Shelf Rack": "https://images.unsplash.com/photo-1600566753151-384129cf4e3f?auto=format&fit=crop&w=900&q=80",
-  "LG Vegetable Tray": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80",
-  "LG Refrigerator Door Bin": "https://images.unsplash.com/photo-1556912167-f556f1f39faa?auto=format&fit=crop&w=900&q=80",
-  "LG Start Relay": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=80",
-  "LG Overload Protector": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Refrigerator Water Filter": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Ice Maker Kit": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Defrost Heater Assembly": "https://images.unsplash.com/photo-1588776814546-1ffcf47267d1?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Evaporator Fan Motor": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Door Gasket Set": "https://images.unsplash.com/photo-1582582621950-5d3a6f2b65ff?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Door Shelf Bin": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Crisper Drawer": "https://images.unsplash.com/photo-1586201375766-83865001e31d?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Thermistor Sensor": "https://images.unsplash.com/photo-1581092160618-2b9b08d4d2da?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Air Damper Control": "https://images.unsplash.com/photo-1581092160620-7a0a8b7c0d9f?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Start Device Relay": "https://images.unsplash.com/photo-1581092160622-4c2f4f1a2e6b?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Compressor Run Capacitor": "https://images.unsplash.com/photo-1581092160627-3d5b1d4c7a0f?auto=format&fit=crop&w=900&q=80",
-  "Whirlpool Condenser Fan Blade": "https://images.unsplash.com/photo-1581092160630-3a7a4b0f61e2?auto=format&fit=crop&w=900&q=80",
-};
+const productImageByName = {};
 
 const products = baseProducts.map((product) => ({
   ...product,
-  // Prefer lookup image, then base image, then default; normalize the chosen URL
-  image: normalizeImageUrl(productImageByName[product.name] || product.image || defaultImage),
+  image: productImageByName[product.name] || product.image || defaultImage,
 }));
 
 const orders = [];
