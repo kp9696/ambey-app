@@ -38,7 +38,7 @@ const baseProducts = [
     name: "Godrej Compressor",
     company: "Godrej",
     category: "Compressor",
-    image: "https://5.imimg.com/data5/SELLER/Default/2023/2/HI/RQ/SZ/27191124/godrej-fridge-compressor-1675334357777-500x500.jpg"
+    image: "https://www.aldahome.com/image/cache/catalog/Compressor/Godrej%20Compressor%20Powercool%20G3%20245-320%20Litre-600x600.jpg"
   },
   {
     id: 2,
