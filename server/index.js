@@ -382,7 +382,7 @@ const baseProducts = [
     name: "Godrej Refrigerator Defrost Thermostat",
     company: "Godrej",
     category: "Sensors",
-    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80"
+    image: "https://m.media-amazon.com/images/I/317r4HltaoL._SX522_.jpg"
   },
   {
     id: 51,
