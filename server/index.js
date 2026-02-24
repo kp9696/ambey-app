@@ -37,41 +37,24 @@ app.use('/images', express.static(__dirname + '/images'));
 
 const productImageUrl = "/images/product.png";
 const baseProducts = [
-  {
-    id: 1,
-    name: "Godrej Compressor",
-    company: "Godrej",
-    category: "Compressor",
-    image: productImageUrl
-  },
-  {
-    id: 2,
-    name: "LG PCB Board",
-    company: "LG",
-    category: "Electrical",
-    image: productImageUrl
-  },
-  {
-    id: 3,
-    name: "Whirlpool Thermostat",
-    company: "Whirlpool",
-    category: "Sensors",
-    image: productImageUrl
-  },
-  {
-    id: 4,
-    name: "AC Capacitor",
-    company: "LG",
-    category: "Electrical",
-    image: productImageUrl
-  },
-  {
-    id: 5,
-    name: "Copper Filter Drier",
-    company: "Godrej",
-    category: "Compressor",
-    image: productImageUrl
-  },
+  // DC Motors
+  { id: 1, name: "4 Wire CCW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-GL4W-DC", brandCode: "LG", description: "4 Wire CCW", image: productImageUrl },
+  { id: 2, name: "3 Wire 9V CCW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-BOS3W-9VDC", brandCode: "BOS", description: "3 Wire 9V CCW", image: productImageUrl },
+  { id: 3, name: "3 Wire CCW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-WP3W-DC", brandCode: "WP", description: "3 Wire CCW", image: productImageUrl },
+  { id: 4, name: "2 Wire CCW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-GD2W-DC", brandCode: "GOD", description: "2 Wire CCW", image: productImageUrl },
+  { id: 5, name: "3 Wire Long Shaft CCW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-SS3W-LS-DC", brandCode: "SS", description: "3 Wire Long Shaft CCW", image: productImageUrl },
+  { id: 6, name: "3 Wire New Model CCW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-SS3WNM-DC", brandCode: "SS", description: "3 Wire New Model CCW", image: productImageUrl },
+  { id: 7, name: "3 Wire Short Shaft CW", company: "SYMBOL", category: "DC Motor", modelNo: "SR-SS3W-SS-DC", brandCode: "SS", description: "3 Wire Short Shaft CW", image: productImageUrl },
+  { id: 8, name: "3 Wire Fan (Black) – 92mm Diameter", company: "SYMBOL", category: "DC Motor", modelNo: "SR-SS3W-FB", brandCode: "SS", description: "3 Wire Fan (Black) – 92mm Diameter", image: productImageUrl },
+  { id: 9, name: "3 Wire Fan (White) – 125mm Diameter", company: "SYMBOL", category: "DC Motor", modelNo: "SR-SS3W-FW", brandCode: "SS", description: "3 Wire Fan (White) – 125mm Diameter", image: productImageUrl },
+  // AC Motors
+  { id: 10, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-GL-AC", brandCode: "GL", description: "Refrigerator AC Motor", image: productImageUrl },
+  { id: 11, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-GLIB-AC", brandCode: "GLIB", description: "Refrigerator AC Motor", image: productImageUrl },
+  { id: 12, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-SS-AC", brandCode: "SS", description: "Refrigerator AC Motor", image: productImageUrl },
+  { id: 13, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-SSIB-AC", brandCode: "SSIB", description: "Refrigerator AC Motor", image: productImageUrl },
+  { id: 14, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-GD-AC", brandCode: "GD", description: "Refrigerator AC Motor", image: productImageUrl },
+  { id: 15, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-WPL-AC", brandCode: "WPL", description: "Refrigerator AC Motor", image: productImageUrl },
+  { id: 16, name: "Refrigerator AC Motor", company: "SYMBOL", category: "AC Motor", modelNo: "SR-WPS-AC", brandCode: "WPS", description: "Refrigerator AC Motor", image: productImageUrl },
 ];
 
 const defaultImage =
