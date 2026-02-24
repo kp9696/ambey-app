@@ -38,23 +38,36 @@ const baseProducts = [
     name: "Godrej Compressor",
     company: "Godrej",
     category: "Compressor",
-    image: "https://www.aldahome.com/image/cache/catalog/Compressor/Godrej%20Compressor%20Powercool%20G3%20245-320%20Litre-600x600.jpg"
+    image: "https://images.unsplash.com/photo-1581092160625-01e7d7a2b6f0?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: 2,
     name: "LG PCB Board",
     company: "LG",
     category: "Electrical",
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+    image: "https://m.media-amazon.com/images/I/41gAPp1qvgL.jpg"
   },
   {
     id: 3,
     name: "Whirlpool Thermostat",
     company: "Whirlpool",
     category: "Sensors",
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/No_image_available.svg/600px-No_image_available.svg.png"
   },
-  // ... add more products as needed, using the new image URL for each
+  {
+    id: 4,
+    name: "AC Capacitor",
+    company: "LG",
+    category: "Electrical",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: 5,
+    name: "Copper Filter Drier",
+    company: "Godrej",
+    category: "Compressor",
+    image: "https://images.unsplash.com/photo-1582582621959-48d27397dc07?auto=format&fit=crop&w=600&q=80"
+  },
 ];
 
 const defaultImage =
