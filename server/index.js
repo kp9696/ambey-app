@@ -32,41 +32,42 @@ app.use(rateLimit({
   legacyHeaders: false,
 }));
 
+const productImageUrl = "https://github.com/kp9696/zhivo-store/raw/main/Untitled%20(1).png";
 const baseProducts = [
   {
     id: 1,
     name: "Godrej Compressor",
     company: "Godrej",
     category: "Compressor",
-    image: "https://m.media-amazon.com/images/I/71l5lR6rQHL._AC_SL1500_.jpg"
+    image: productImageUrl
   },
   {
     id: 2,
     name: "LG PCB Board",
     company: "LG",
     category: "Electrical",
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"
+    image: productImageUrl
   },
   {
     id: 3,
     name: "Whirlpool Thermostat",
     company: "Whirlpool",
     category: "Sensors",
-    image: "https://www.researchgate.net/profile/Chandrashekhar-Kale/publication/323386964/figure/fig1/AS:614401701134336@1523456337017/Thermostat-used-in-refrigerator.png"
+    image: productImageUrl
   },
   {
     id: 4,
     name: "AC Capacitor",
     company: "LG",
     category: "Electrical",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+    image: productImageUrl
   },
   {
     id: 5,
     name: "Copper Filter Drier",
     company: "Godrej",
     category: "Compressor",
-    image: "https://www.indiamart.com/proddetail/copper-filter-drier-16814649197.html"
+    image: productImageUrl
   },
 ];
 
