@@ -38,7 +38,7 @@ const baseProducts = [
     name: "Godrej Compressor",
     company: "Godrej",
     category: "Compressor",
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/2/HI/RQ/SZ/27191124/godrej-fridge-compressor-1675334357777-500x500.jpg"
   },
   {
     id: 2,
