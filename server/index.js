@@ -60,13 +60,11 @@ const baseProducts = [
 const defaultImage =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/No_image_available.svg/600px-No_image_available.svg.png";
 
-const productImageByName = {
-  "Godrej Compressor": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
-};
+const productImageByName = {};
 
 const products = baseProducts.map((product) => ({
   ...product,
-  image: productImageByName[product.name] || product.image || defaultImage,
+  image: product.image || defaultImage,
 }));
 
 const orders = [];
