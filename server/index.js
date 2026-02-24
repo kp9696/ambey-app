@@ -165,6 +165,7 @@ const defaultImage =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/No_image_available.svg/600px-No_image_available.svg.png";
 
 const productImageByName = {
+  // Existing Amazon images (keep)
   "Godrej Compressor": "https://m.media-amazon.com/images/I/61kKxQ4f9PL._SL1500_.jpg",
   "LG PCB Board": "https://m.media-amazon.com/images/I/71G7p9YqZ-L._SL1500_.jpg",
   "Whirlpool Thermostat": "https://m.media-amazon.com/images/I/61tR1Jz8n3L._SL1500_.jpg",
@@ -179,6 +180,42 @@ const productImageByName = {
   "Defrost Timer": "https://m.media-amazon.com/images/I/61x9FvN6LxL._SL1500_.jpg",
   "Inverter AC PCB Module": "https://m.media-amazon.com/images/I/61Yqf7g6HjL._SL1500_.jpg",
   "Pressure Sensor Switch": "https://m.media-amazon.com/images/I/51y9x9v8XQL._SL1000_.jpg",
+
+  // Unique online images for the remaining products (Unsplash)
+  "Indoor AC Blower Wheel": "https://images.unsplash.com/photo-1581092160625-01e7d7a2b6f0?auto=format&fit=crop&w=900&q=80",
+  "Refrigerator Door Gasket": "https://images.unsplash.com/photo-1582582621959-48d27397dc07?auto=format&fit=crop&w=900&q=80",
+  "Compressor Overload Protector": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+  "AC Contact Relay": "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=80",
+  "Dual Run Capacitor 45+5 MFD": "https://images.unsplash.com/photo-1589792923962-537704632910?auto=format&fit=crop&w=900&q=80",
+  "R32 Refrigerant Gas Cylinder": "https://images.unsplash.com/photo-1616085112161-e2f1c90a3e2f?auto=format&fit=crop&w=900&q=80",
+  "Compressor Mounting Kit": "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=900&q=80",
+  "AC Room Temperature Sensor": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80",
+  "Copper Coil Tube 1/4 inch": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80",
+  "Service Valve Core": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+  "LG Refrigerator Water Filter Cartridge": "https://images.unsplash.com/photo-1582719478185-2f9c3b6f9a33?auto=format&fit=crop&w=900&q=80",
+  "LG Ice Maker Assembly": "https://images.unsplash.com/photo-1580910419894-3f3bca9b81d6?auto=format&fit=crop&w=900&q=80",
+  "LG Defrost Heater": "https://images.unsplash.com/photo-1601049541289-9b1b7bbb16d5?auto=format&fit=crop&w=900&q=80",
+  "LG Evaporator Fan Motor": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
+  "LG Door Switch": "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80",
+  "LG Temperature Control Thermistor": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80",
+  "LG Inlet Water Valve": "https://images.unsplash.com/photo-1584270354949-1f285e3fda5b?auto=format&fit=crop&w=900&q=80",
+  "LG Refrigerator Shelf Rack": "https://images.unsplash.com/photo-1600566753151-384129cf4e3f?auto=format&fit=crop&w=900&q=80",
+  "LG Vegetable Tray": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80",
+  "LG Refrigerator Door Bin": "https://images.unsplash.com/photo-1556912167-f556f1f39faa?auto=format&fit=crop&w=900&q=80",
+  "LG Start Relay": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=80",
+  "LG Overload Protector": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Refrigerator Water Filter": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Ice Maker Kit": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Defrost Heater Assembly": "https://images.unsplash.com/photo-1588776814546-1ffcf47267d1?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Evaporator Fan Motor": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Door Gasket Set": "https://images.unsplash.com/photo-1582582621950-5d3a6f2b65ff?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Door Shelf Bin": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Crisper Drawer": "https://images.unsplash.com/photo-1586201375766-83865001e31d?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Thermistor Sensor": "https://images.unsplash.com/photo-1581092160618-2b9b08d4d2da?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Air Damper Control": "https://images.unsplash.com/photo-1581092160620-7a0a8b7c0d9f?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Start Device Relay": "https://images.unsplash.com/photo-1581092160622-4c2f4f1a2e6b?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Compressor Run Capacitor": "https://images.unsplash.com/photo-1581092160627-3d5b1d4c7a0f?auto=format&fit=crop&w=900&q=80",
+  "Whirlpool Condenser Fan Blade": "https://images.unsplash.com/photo-1581092160630-3a7a4b0f61e2?auto=format&fit=crop&w=900&q=80",
 };
 
 const products = baseProducts.map((product) => ({
