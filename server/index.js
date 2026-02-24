@@ -62,9 +62,20 @@ const defaultImage =
 
 const productImageByName = {};
 
+function resolveImageUrl(image) {
+  // Accept .jpg, .jpeg, .png, .svg, etc. If .jpg fails, try .jpeg
+  if (!image) return defaultImage;
+  if (image.endsWith('.jpg')) {
+    // Optionally, you could check if .jpg is not loading and fallback to .jpeg
+    // But since backend can't check loading, just return as is
+    return image;
+  }
+  return image;
+}
+
 const products = baseProducts.map((product) => ({
   ...product,
-  image: product.image || defaultImage,
+  image: resolveImageUrl(product.image) || defaultImage,
 }));
 
 const orders = [];
