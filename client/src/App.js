@@ -777,55 +777,49 @@ function WhatsAppFloat() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     const onScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 120) {
-        setIsSubmitting(true);
-        try {
-          const response = await axios.post("/api/orders", {
-            name: form.name,
-            company: form.company,
-            address: form.address,
-            mobile: form.mobile,
-            gstInvoice: form.gstInvoice,
-            gstBusinessName: form.gstBusinessName,
-            gstNumber: form.gstNumber,
-            items: cart.map(item => ({
-              id: item.id,
-              name: item.name,
-              company: item.company,
-              category: item.category,
-              quantity: item.quantity,
-            })),
-          });
-          if (response?.data?.orderId) {
-            orderId = response.data.orderId;
-          }
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-          const itemsBlock = cart
-            .map((item, index) => `${index + 1}. ${item.name} (${item.category}) - Qty: ${item.quantity}`)
-            .join("\n");
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+  const isBusinessTime = day >= 1 && day <= 6 && hour >= 9 && hour < 19;
 
-          const gstBlock = form.gstInvoice
-            ? `\nGST Details:\n- GST Business Name: ${form.gstBusinessName}\n- GST Number: ${form.gstNumber}`
-            : "\nGST Details:\n- Not Required";
+  const message = isBusinessTime
+    ? "Hello Jai Ambey Refrigeration, I need spare parts details."
+    : "Hello Jai Ambey Refrigeration, I need spare parts details. We reached outside business hours (Mon-Sat, 9:00 AM-7:00 PM). Please share requirements, we will respond in working hours.";
 
-          const message = `\nNew Order Inquiry - Jai Ambey Refrigeration\n\n  Order ID: ${orderId}\n\nOrder Items:\n${itemsBlock}\n\nCustomer Details:\nName: ${form.name}\nCompany: ${form.company}\nAddress: ${form.address}\nMobile: ${form.mobile}\nGST Invoice Required: ${form.gstInvoice ? "Yes" : "No"}\n${gstBlock}\n`;
-
-          setSuccessOrderId(orderId);
-          setSuccessMessage(message);
-          setOrderSuccess(true);
-        } catch (error) {
-          console.error("Order save failed", error);
-          setSubmitted(true);
-          setIsSubmitting(false);
-          alert("Failed to submit order. Please try again or contact support.");
-          return;
-        } finally {
-          setIsSubmitting(false);
-        }
-        ☎
+  return (
+    <div className={`contact-float ${isVisible ? "show" : "hide"}`}>
+      <a
+        href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`}
+        className="float-btn whatsapp-float pulse-glow"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        title="Chat Now"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+          alt="WhatsApp"
+        />
+      </a>
+      <a
+        href="tel:9416203393"
+        className="float-btn call-float"
+        aria-label="Call now"
+      >
+        <span role="img" aria-label="Phone">☎️</span>
       </a>
     </div>
   );
