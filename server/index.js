@@ -32,7 +32,10 @@ app.use(rateLimit({
   legacyHeaders: false,
 }));
 
-const productImageUrl = "https://github.com/kp9696/zhivo-store/raw/main/Untitled%20(1).png";
+// Serve static images from the images folder
+app.use('/images', express.static(__dirname + '/images'));
+
+const productImageUrl = "/images/product.png";
 const baseProducts = [
   {
     id: 1,
