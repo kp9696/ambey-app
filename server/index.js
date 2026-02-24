@@ -445,7 +445,7 @@ const baseProducts = [
     name: "Universal Refrigerator Temperature Controller",
     company: "Universal",
     category: "Sensors",
-    image: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=900&q=80"
+    image: "https://m.media-amazon.com/images/I/711ksbkW3JL.jpg"
   },
 ];
 
