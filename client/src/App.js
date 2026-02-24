@@ -316,11 +316,13 @@ function Header({ onOpenCart, cartCount, searchQuery, setSearchQuery }) {
       </div>
       <div className="header">
         <div className="header-top">
-          <img
-            src="https://github.com/kp9696/zhivo-store/raw/main/Untitled%20(1).png"
-            alt="Jai Ambey Refrigeration Logo"
-            className="brand-logo"
-          />
+          <a href="/" tabIndex={0} aria-label="Go to home">
+            <img
+              src="https://github.com/kp9696/zhivo-store/raw/main/Untitled%20(1).png"
+              alt="Jai Ambey Refrigeration Logo"
+              className="brand-logo"
+            />
+          </a>
         </div>
         <p className="header-chip">🏭 B2B Spare Parts Marketplace</p>
         <h1>Jai Ambey Refrigeration</h1>
