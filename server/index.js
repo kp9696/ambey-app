@@ -38,7 +38,7 @@ const baseProducts = [
     name: "Godrej Compressor",
     company: "Godrej",
     category: "Compressor",
-    image: "https://images.unsplash.com/photo-1581092160625-01e7d7a2b6f0?auto=format&fit=crop&w=600&q=80"
+    image: "https://m.media-amazon.com/images/I/71l5lR6rQHL._AC_SL1500_.jpg"
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const baseProducts = [
     name: "Whirlpool Thermostat",
     company: "Whirlpool",
     category: "Sensors",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/No_image_available.svg/600px-No_image_available.svg.png"
+    image: "https://www.researchgate.net/profile/Chandrashekhar-Kale/publication/323386964/figure/fig1/AS:614401701134336@1523456337017/Thermostat-used-in-refrigerator.png"
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const baseProducts = [
     name: "Copper Filter Drier",
     company: "Godrej",
     category: "Compressor",
-    image: "https://images.unsplash.com/photo-1582582621959-48d27397dc07?auto=format&fit=crop&w=600&q=80"
+    image: "https://www.indiamart.com/proddetail/copper-filter-drier-16814649197.html"
   },
 ];
 
