@@ -66,7 +66,7 @@ const baseProducts = [
     name: "Copper Filter Drier",
     company: "Godrej",
     category: "Compressor",
-    image: "http://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70"
+    image: "https://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70"
   },
   {
     id: 6,
@@ -452,13 +452,21 @@ const baseProducts = [
 const defaultImage =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/No_image_available.svg/600px-No_image_available.svg.png";
 
+// Normalize an image URL: trim whitespace, upgrade http:// to https://,
+// and fall back to defaultImage for non-string or empty values.
+function normalizeImageUrl(url) {
+  if (typeof url !== "string" || !url.trim()) return defaultImage;
+  const trimmed = url.trim();
+  return trimmed.startsWith("http://") ? trimmed.replace("http://", "https://") : trimmed;
+}
+
 const productImageByName = {
   // Existing Amazon images (keep)
   "Godrej Compressor": "https://5.imimg.com/data5/SELLER/Default/2023/2/HI/RQ/SZ/27191124/godrej-fridge-compressor-1675334357777-500x500.jpg",
   "LG PCB Board": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQbPu3FWPXNKf7-gad1gijg5-nUMya1choA-3nIevo1u80dBfg_fa4uTVm-qxUYaYAemqPC3TokB7eYMCI_DJ7O1E_p_9g2WUegNE4f-r61pdTt4pJwpFGwFw",
   "Whirlpool Thermostat": "https://m.media-amazon.com/images/I/41gAPp1qvgL.jpg",
   "AC Capacitor 35+5 MFD": "https://m.media-amazon.com/images/I/61ov1+DyjXL.jpg",
-  "Copper Filter Drier": "http://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70",
+  "Copper Filter Drier": "https://rukmini1.flixcart.com/image/1500/1500/kdlzte80/electronic-hobby-kit/f/s/f/fridge-replacement-copper-filter-drier-for-refrigerator-11-cm-original-imafuhfthng6mwmx.jpeg?q=70",
   "R134a Refrigerant Gas (450g)": "https://m.media-amazon.com/images/I/51rTgS4J6JL._SL1000_.jpg",
   "Split AC Fan Motor": "https://m.media-amazon.com/images/I/61v3G7k6A8L._SL1500_.jpg",
   "Universal AC Remote": "https://m.media-amazon.com/images/I/61yFqN4f5DL._SL1500_.jpg",
@@ -508,7 +516,8 @@ const productImageByName = {
 
 const products = baseProducts.map((product) => ({
   ...product,
-  image: productImageByName[product.name] || product.image || defaultImage,
+  // Prefer lookup image, then base image, then default; normalize the chosen URL
+  image: normalizeImageUrl(productImageByName[product.name] || product.image || defaultImage),
 }));
 
 const orders = [];
