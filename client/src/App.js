@@ -28,6 +28,13 @@ const FALLBACK_PRODUCT_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
 const WHATSAPP_PHONE = "919416203393";
 const API_BASE_URL = process.env.REACT_APP_API_URL || window.location.origin;
 const CART_STORAGE_KEY = "ambey_cart_v1";
+const DESKTOP_PRODUCTS_PAGE_SIZE = 24;
+const MOBILE_PRODUCTS_PAGE_SIZE = 12;
+
+const getProductsPageSize = () => {
+  if (typeof window === "undefined") return DESKTOP_PRODUCTS_PAGE_SIZE;
+  return window.innerWidth <= 768 ? MOBILE_PRODUCTS_PAGE_SIZE : DESKTOP_PRODUCTS_PAGE_SIZE;
+};
 
 const getStoredCart = () => {
   if (typeof window === "undefined") return [];
@@ -137,7 +144,9 @@ function App() {
   const [error, setError] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [wishlist, setWishlist] = useState([]);
-  const [viewMode, setViewMode] = useState("grid");
+  const [viewMode] = useState("grid");
+  const [productsPageSize, setProductsPageSize] = useState(() => getProductsPageSize());
+  const [visibleProductCount, setVisibleProductCount] = useState(() => getProductsPageSize());
   // Mobile filters removed for mobile-friendly experience
   const [stats, setStats] = useState({
     totalProducts: 0,
@@ -173,6 +182,15 @@ function App() {
       // Ignore storage errors so checkout flow continues to work
     }
   }, [cart]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setProductsPageSize(getProductsPageSize());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Handler to clear all filters
   const handleClearFilters = () => {
@@ -276,6 +294,21 @@ function App() {
       return haystack.includes(debouncedSearchQuery.trim().toLowerCase());
     });
   }, [products, selectedCompany, selectedCategory, debouncedSearchQuery]);
+
+  useEffect(() => {
+    setVisibleProductCount(productsPageSize);
+  }, [selectedCompany, selectedCategory, debouncedSearchQuery, productsPageSize]);
+
+  const visibleProducts = useMemo(
+    () => filteredProducts.slice(0, visibleProductCount),
+    [filteredProducts, visibleProductCount]
+  );
+
+  const hasMoreProducts = visibleProductCount < filteredProducts.length;
+
+  const handleLoadMoreProducts = useCallback(() => {
+    setVisibleProductCount((prev) => prev + productsPageSize);
+  }, [productsPageSize]);
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cart.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0);
@@ -385,17 +418,29 @@ function App() {
                 </button>
               </div>
             ) : (
-              <ProductGrid
-                products={filteredProducts}
-                viewMode={viewMode}
-                addToCart={addToCart}
-                cartProductIds={cartProductIds}
-                draftQuantities={draftQuantities}
-                setDraftQuantity={setDraftQuantity}
-                onProductClick={(product) => setSelectedProduct(product)}
-                onWishlist={toggleWishlist}
-                isWishlisted={(id) => wishlist.includes(id)}
-              />
+              <>
+                <ProductGrid
+                  products={visibleProducts}
+                  viewMode={viewMode}
+                  addToCart={addToCart}
+                  cartProductIds={cartProductIds}
+                  draftQuantities={draftQuantities}
+                  setDraftQuantity={setDraftQuantity}
+                  onProductClick={(product) => setSelectedProduct(product)}
+                  onWishlist={toggleWishlist}
+                  isWishlisted={(id) => wishlist.includes(id)}
+                />
+                {hasMoreProducts && (
+                  <div className="load-more-panel" role="status" aria-live="polite">
+                    <p>
+                      Showing {visibleProducts.length} of {filteredProducts.length} products
+                    </p>
+                    <button className="secondary-btn" onClick={handleLoadMoreProducts}>
+                      Load More Products
+                    </button>
+                  </div>
+                )}
+              </>
             )}
           </div>
         ) : (
